@@ -191,11 +191,11 @@ export default function Landing() {
               Watch or star the project on GitHub:{" "}
               <a
                 className="text-blue-300 hover:underline"
-                href="https://github.com/lockfale/osint-framework"
+                href="https://github.com/kode0x/Optima"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://github.com/lockfale/osint-framework
+                https://github.com/kode0x/Optima
               </a>
             </li>
           </ul>
