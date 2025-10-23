@@ -1,0 +1,48 @@
+{
+  "name": "Resources",
+  "children": [
+    {
+      "name": "Machine Learning",
+      "children": [
+        {
+          "name": "Supervised Learning",
+          "resources": [
+            {
+              "title": "Linear Regression",
+              "url": "https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares"
+            },
+            {
+              "title": "Decision Trees",
+              "url": "https://scikit-learn.org/stable/modules/tree.html"
+            }
+          ]
+        },
+        {
+          "name": "Unsupervised Learning",
+          "resources": [
+            {
+              "title": "K-means Clustering",
+              "url": "https://scikit-learn.org/stable/modules/clustering.html#k-means"
+            },
+            {
+              "title": "PCA",
+              "url": "https://scikit-learn.org/stable/modules/decomposition.html#pca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Data Science",
+      "children": [
+        {
+          "name": "Data Visualization",
+          "resources": [
+            { "title": "Matplotlib", "url": "https://matplotlib.org/" },
+            { "title": "Seaborn", "url": "https://seaborn.pydata.org/" }
+          ]
+        }
+      ]
+    }
+  ]
+}
