@@ -37,20 +37,24 @@ export default function TreeNode({ node, linkClassName = "text-blue-300 hover:un
           (open ? "opacity-100 max-h-[2000px] translate-y-0" : "opacity-0 max-h-0 -translate-y-1 overflow-hidden")
         }
       >
-        {node.resources?.map((r) => (
-          <div key={r.title} className="text-sm">
-            <a
-              className={linkClassName}
-              href={r.url}
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={() => onLinkHoverChange?.(true)}
-              onMouseLeave={() => onLinkHoverChange?.(false)}
-            >
-              {r.title}
-            </a>
-          </div>
-        ))}
+        {node.resources && node.resources.length > 0 && (
+          <ol className="list-decimal pl-5 space-y-1">
+            {node.resources.map((r) => (
+              <li key={r.title} className="text-sm">
+                <a
+                  className={linkClassName}
+                  href={r.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  onMouseEnter={() => onLinkHoverChange?.(true)}
+                  onMouseLeave={() => onLinkHoverChange?.(false)}
+                >
+                  {r.title}
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
         {node.children?.map((child) => (
           <TreeNode
             key={child.name}
