@@ -511,7 +511,7 @@ export default function Graph() {
       }
     }
 
-    function handleMouseUp(e: MouseEvent) {
+    function handleMouseUp(_: MouseEvent) {
       dragging = null;
       dragCandidate = null;
       isPanning = false;
