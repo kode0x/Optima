@@ -427,9 +427,12 @@ export default function Graph() {
     let dragging: { node: GraphNode; dx: number; dy: number } | null = null;
     let dragCandidate: { node: GraphNode; dx: number; dy: number } | null =
       null;
-    let mouseDownHit: GraphNode | null = null;
-    let mouseDownAt = 0;
+    let mouseDownHit = null;
+    let mouseDownAt = null;
     let mouseDownPos = { x: 0, y: 0 };
+
+    void mouseDownHit;
+    void mouseDownAt;
 
     function handleMouseMove(e: MouseEvent) {
       const rect = canvas.getBoundingClientRect();
