@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Resources from "./pages/Resources";
+import Graph from "./pages/Graph";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/graph" element={<Graph />} />
         </Routes>
       </main>
     </div>

@@ -28,7 +28,7 @@ export default function Resources() {
   if (!data) return <div className="text-white p-4">Loading...</div>;
 
   return (
-    <div className="text-white p-6 max-w-4xl mx-auto border-x px-10 border-white/10 min-h-screen">
+    <div className="text-white p-6 max-w-6xl mx-auto border-x px-10 border-white/10 min-h-screen">
       <header className="flex items-center justify-between mb-10">
         <Link
           to="/"
@@ -48,6 +48,12 @@ export default function Resources() {
             to="/resources"
           >
             Resources
+          </Link>
+          <Link
+            className="text-white/80 hover:text-white hover:scale-105 transition-all"
+            to="/graph"
+          >
+            Graph
           </Link>
         </nav>
       </header>

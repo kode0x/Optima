@@ -44,6 +44,12 @@ export default function Landing() {
           >
             Resources
           </Link>
+          <Link
+            className="text-white/80 hover:text-white hover:scale-105 transition-all"
+            to="/graph"
+          >
+            Graph
+          </Link>
         </nav>
       </header>
       <section className="py-20 text-center">
@@ -84,9 +90,9 @@ export default function Landing() {
             </div>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/5 p-4 hover:scale-105 transition-all">
-            <div className="text-lg font-semibold">Fast & Lightweight</div>
+            <div className="text-lg font-semibold">Graph Visualization</div>
             <div className="mt-1 text-white/70 text-sm">
-              Built With React + Vite + TailwindCSS.
+              Explore resources as an interactive graph with pan, zoom, and drag.
             </div>
           </div>
         </div>
