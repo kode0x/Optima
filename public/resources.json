@@ -2,44 +2,56 @@
   "name": "Resources",
   "children": [
     {
-      "name": "Machine Learning",
+      "name": "Statistics",
       "children": [
         {
-          "name": "Supervised Learning",
+          "name": "Books",
           "resources": [
             {
-              "title": "Linear Regression",
-              "url": "https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares"
+              "title": "Introductory Statistics - OpenStax",
+              "url": "https://assets.openstax.org/oscms-prodcms/media/documents/IntroductoryStatistics-OP_i6tAI7e.pdf"
             },
             {
-              "title": "Decision Trees",
-              "url": "https://scikit-learn.org/stable/modules/tree.html"
+              "title": "All of Statistics",
+              "url": "https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf"
+            },
+            {
+              "title": "Online Statistics Education: An Interactive Multimedia Course of Study",
+              "url": "https://onlinestatbook.com/Online_Statistics_Education.pdf"
+            },
+            {
+              "title": "Fundamentals of Mathematical Statistics",
+              "url": "https://www.dcpehvpm.org/E-Content/Stat/FUNDAMENTAL%20OF%20MATHEMATICAL%20STATISTICS-S%20C%20GUPTA%20&%20V%20K%20KAPOOR.pdf"
+            },
+            {
+              "title": "The Elements of Statistical Learning",
+              "url": "https://hastie.su.domains/ElemStatLearn/"
             }
           ]
         },
         {
-          "name": "Unsupervised Learning",
+          "name": "Videos",
           "resources": [
             {
-              "title": "K-means Clustering",
-              "url": "https://scikit-learn.org/stable/modules/clustering.html#k-means"
+              "title": "Statistics and Probability Full Course || Statistics For Data Science",
+              "url": "https://www.youtube.com/watch?v=sbbYntt5CJk"
             },
             {
-              "title": "PCA",
-              "url": "https://scikit-learn.org/stable/modules/decomposition.html#pca"
+              "title": "Statistics Fundamentals",
+              "url": "https://www.youtube.com/watch?v=-14BImgVENA&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9"
+            },
+            {
+              "title": "Statistics - A Full Lecture to learn Data Science (2025 Version)",
+              "url": "https://www.youtube.com/watch?v=K9teElePNkk&t=112s"
+            },
+            {
+              "title": "Fundamentals of Mathematical Statistics",
+              "url": "https://www.dcpehvpm.org/E-Content/Stat/FUNDAMENTAL%20OF%20MATHEMATICAL%20STATISTICS-S%20C%20GUPTA%20&%20V%20K%20KAPOOR.pdf"
+            },
+            {
+              "title": "The Elements of Statistical Learning",
+              "url": "https://hastie.su.domains/ElemStatLearn/"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Data Science",
-      "children": [
-        {
-          "name": "Data Visualization",
-          "resources": [
-            { "title": "Matplotlib", "url": "https://matplotlib.org/" },
-            { "title": "Seaborn", "url": "https://seaborn.pydata.org/" }
           ]
         }
       ]
