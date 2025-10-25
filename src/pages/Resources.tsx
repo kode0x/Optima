@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 type Resource = {
   title: string;
   url: string;
+  platform?: string;
+  channel?: string;
+  resource_type?: string;
+  authors?: string[];
 };
 
 type Node = {
