@@ -41,16 +41,52 @@
               "url": "https://www.youtube.com/watch?v=-14BImgVENA&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9"
             },
             {
-              "title": "Statistics - A Full Lecture to learn Data Science (2025 Version)",
-              "url": "https://www.youtube.com/watch?v=K9teElePNkk&t=112s"
-            },
-            {
               "title": "Fundamentals of Mathematical Statistics",
               "url": "https://www.dcpehvpm.org/E-Content/Stat/FUNDAMENTAL%20OF%20MATHEMATICAL%20STATISTICS-S%20C%20GUPTA%20&%20V%20K%20KAPOOR.pdf"
             },
             {
               "title": "The Elements of Statistical Learning",
               "url": "https://hastie.su.domains/ElemStatLearn/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Linear Algebra",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "Linear Algebra Done Right",
+              "url": "https://linear.axler.net/LADR4e.pdf"
+            },
+            {
+              "title": "Matrix Theory And Linear Algebra",
+              "url": "www.mathstat.dal.ca/~selinger/linear-algebra/downloads/LinearAlgebra.pdf"
+            },
+            {
+              "title": "Linear Algebra",
+              "url": "https://www.math.ucdavis.edu/~linear/"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Essence of Linear Algebra",
+ 
+              "channel": "3Blue1Brown"
+            },
+            {
+              "title": "MIT 18.06SC Linear Algebra, Fall 2011",
+              "url": "https://www.youtube.com/watch?v=0MtwqhIwdrI&list=PLE7DDD91010BC51F8"
+            },
+            {
+              "title": "Linear Algebra (Full Course)",
+              "url": "https://www.youtube.com/watch?v=-vZPtT1PVX8&list=PLHXZ9OQGMqxfUl0tcqPNTJsb7R6BqSLo6"
             }
           ]
         }
