@@ -11,13 +11,15 @@
               "title": "Introductory Statistics - OpenStax",
               "url": "https://assets.openstax.org/oscms-prodcms/media/documents/IntroductoryStatistics-OP_i6tAI7e.pdf",
               "resource_type": "PDF",
-              "authors": ["Barbara Illowsky", "Susan Dean"]
+              "authors": ["Barbara Illowsky", "Susan Dean"],
+              "language": "English"
             },
             {
               "title": "All of Statistics",
               "url": "https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf",
               "resource_type": "PDF",
-              "authors": ["Larry Wasserman"]
+              "authors": ["Larry Wasserman"],
+              "language": "English"
             },
             {
               "title": "Online Statistics Education: An Interactive Multimedia Course of Study",
@@ -30,13 +32,15 @@
                 "Rudy Guerra",
                 "Dan Osherson",
                 "Heidi Zimmer"
-              ]
+              ],
+              "language": "English"
             },
             {
               "title": "Fundamentals of Mathematical Statistics",
               "url": "https://www.dcpehvpm.org/E-Content/Stat/FUNDAMENTAL%20OF%20MATHEMATICAL%20STATISTICS-S%20C%20GUPTA%20&%20V%20K%20KAPOOR.pdf",
               "resource_type": "PDF",
-              "authors": ["S. C. Gupta", "V. K. Kapoor"]
+              "authors": ["S. C. Gupta", "V. K. Kapoor"],
+              "language": "English"
             },
             {
               "title": "The Elements of Statistical Learning",
@@ -46,7 +50,8 @@
                 " Trevor Hastie",
                 "Robert Tibshirani",
                 " Jerome Friedman"
-              ]
+              ],
+              "language": "English"
             }
           ]
         },
@@ -57,13 +62,15 @@
               "title": "Statistics and Probability Full Course || Statistics For Data Science",
               "url": "https://www.youtube.com/watch?v=sbbYntt5CJk",
               "platform": "YouTube",
-              "channel": "Geek's Lesson"
+              "channel": "Geek's Lesson",
+              "language": "English"
             },
             {
               "title": "Statistics Fundamentals",
               "url": "https://www.youtube.com/watch?v=-14BImgVENA&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
               "platform": "YouTube",
-              "channel": "StatQuest with Josh Starmer"
+              "channel": "StatQuest with Josh Starmer",
+              "language": "English"
             }
           ]
         }
@@ -79,7 +86,8 @@
               "title": "Linear Algebra Done Right",
               "url": "https://linear.axler.net/LADR4e.pdf",
               "resource_type": "PDF",
-              "authors": ["Sheldon Axler"]
+              "authors": ["Sheldon Axler"],
+              "language": "English"
             },
             {
               "title": "Matrix Theory And Linear Algebra",
@@ -102,7 +110,8 @@
                 "Larissa Stone",
                 "Ryan Yee",
                 "Ehsun Zahedi"
-              ]
+              ],
+              "language": "English"
             },
             {
               "title": "Linear Algebra",
@@ -113,7 +122,8 @@
                 "Tom Denton",
                 "Rohit Thomas",
                 "Andrew Waldron"
-              ]
+              ],
+              "language": "English"
             }
           ]
         },
@@ -124,19 +134,22 @@
               "title": "Essence of Linear Algebra",
               "url": "https://www.youtube.com/watch?v=BaM7OCEm3G0&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
               "platform": "YouTube",
-              "channel": "3Blue1Brown"
+              "channel": "3Blue1Brown",
+              "language": "English"
             },
             {
               "title": "MIT 18.06SC Linear Algebra, Fall 2011",
               "url": "https://www.youtube.com/watch?v=0MtwqhIwdrI&list=PLE7DDD91010BC51F8",
               "platform": "YouTube",
-              "channel": "MIT OpenCourseWare"
+              "channel": "MIT OpenCourseWare",
+              "language": "English"
             },
             {
               "title": "Linear Algebra (Full Course)",
               "url": "https://www.youtube.com/watch?v=-vZPtT1PVX8&list=PLHXZ9OQGMqxfUl0tcqPNTJsb7R6BqSLo6",
               "platform": "YouTube",
-              "channel": "Dr. Trefor Bazett"
+              "channel": "Dr. Trefor Bazett",
+              "language": "English"
             }
           ]
         }

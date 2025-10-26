@@ -7,6 +7,7 @@ type Resource = {
   channel?: string;
   resource_type?: string;
   authors?: string[];
+  language?: string;
 };
 
 type Node = {
@@ -81,6 +82,13 @@ export default function TreeNode({ node, linkClassName = "text-blue-300 hover:un
                     {r.authors && r.authors.length > 0 && (
                       <span>by {r.authors.join(", ")}</span>
                     )}
+                  </div>
+                )}
+                {r.language && (
+                  <div className="mt-0.5 ml-1 flex items-center gap-2 text-xs text-white/60">
+                    <span className="inline-flex items-center rounded border border-emerald-500/30 bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                      {r.language}
+                    </span>
                   </div>
                 )}
               </li>

@@ -9,6 +9,7 @@ type Resource = {
   channel?: string;
   resource_type?: string;
   authors?: string[];
+  language?: string;
 };
 
 type Node = {
