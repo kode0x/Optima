@@ -2,6 +2,49 @@
   "name": "Resources",
   "children": [
     {
+      "name": "Combinatorics",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "Combinatorics - Version 2.1",
+              "url": "https://www.cs.uleth.ca/~morris/Combinatorics/Combinatorics.pdf",
+              "resource_type": "PDF",
+              "authors": ["Joy Morris"],
+              "language": "English"
+            },
+            {
+              "title": "Combinatorics: The Art of Counting",
+              "url": "https://users.math.msu.edu/users/bsagan/Books/Aoc/final.pdf",
+              "resource_type": "PDF",
+              "authors": ["Bruce E. Sagan"],
+              "language": "English"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Discrete Math II/Combinatorics (Entire course)",
+              "url": "https://www.youtube.com/watch?v=-vJhahLdmLI&list=PLl-gb0E4MII0sGLCJeqDB3y63HZ6lM5LJ",
+              "platform": "YouTube",
+              "channel": "Kimberly Brehm",
+              "language": "English"
+            },
+            {
+              "title": "Math 301 - Introduction to Combinatorics",
+              "url": "https://www.youtube.com/watch?v=-FP3UgU9ZNA&list=PL5J6K3znOvOmzBUoxlk-W0N4j7L1Y9yfW",
+              "platform": "YouTube",
+              "channel": "CSU Mathematics",
+              "language": "English"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Statistics",
       "children": [
         {
