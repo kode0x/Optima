@@ -31,14 +31,16 @@
               "url": "https://www.youtube.com/watch?v=-vJhahLdmLI&list=PLl-gb0E4MII0sGLCJeqDB3y63HZ6lM5LJ",
               "platform": "YouTube",
               "channel": "Kimberly Brehm",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             },
             {
               "title": "Math 301 - Introduction to Combinatorics",
               "url": "https://www.youtube.com/watch?v=-FP3UgU9ZNA&list=PL5J6K3znOvOmzBUoxlk-W0N4j7L1Y9yfW",
               "platform": "YouTube",
               "channel": "CSU Mathematics",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             }
           ]
         }
@@ -90,9 +92,9 @@
               "url": "https://hastie.su.domains/ElemStatLearn/",
               "resource_type": "PDF",
               "authors": [
-                " Trevor Hastie",
+                "Trevor Hastie",
                 "Robert Tibshirani",
-                " Jerome Friedman"
+                "Jerome Friedman"
               ],
               "language": "English"
             }
@@ -106,14 +108,16 @@
               "url": "https://www.youtube.com/watch?v=sbbYntt5CJk",
               "platform": "YouTube",
               "channel": "Geek's Lesson",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             },
             {
               "title": "Statistics Fundamentals",
               "url": "https://www.youtube.com/watch?v=-14BImgVENA&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
               "platform": "YouTube",
               "channel": "StatQuest with Josh Starmer",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             }
           ]
         }
@@ -134,7 +138,7 @@
             },
             {
               "title": "Matrix Theory And Linear Algebra",
-              "url": "www.mathstat.dal.ca/~selinger/linear-algebra/downloads/LinearAlgebra.pdf",
+              "url": "https://www.mathstat.dal.ca/~selinger/linear-algebra/downloads/LinearAlgebra.pdf",
               "resource_type": "PDF",
               "authors": [
                 "Ken Kuttler",
@@ -178,21 +182,133 @@
               "url": "https://www.youtube.com/watch?v=BaM7OCEm3G0&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
               "platform": "YouTube",
               "channel": "3Blue1Brown",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             },
             {
               "title": "MIT 18.06SC Linear Algebra, Fall 2011",
               "url": "https://www.youtube.com/watch?v=0MtwqhIwdrI&list=PLE7DDD91010BC51F8",
               "platform": "YouTube",
               "channel": "MIT OpenCourseWare",
-              "language": "English"
+              "language": "English",
+              "resource_type": "Video"
             },
             {
               "title": "Linear Algebra (Full Course)",
               "url": "https://www.youtube.com/watch?v=-vZPtT1PVX8&list=PLHXZ9OQGMqxfUl0tcqPNTJsb7R6BqSLo6",
               "platform": "YouTube",
               "channel": "Dr. Trefor Bazett",
+              "language": "English",
+              "resource_type": "Video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Calculus",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "Calculus Volume 1",
+              "url": "https://openstax.org/details/books/calculus-volume-1",
+              "resource_type": "PDF",
+              "authors": [
+                "Joseph Lakey",
+                "Elaine A. Terry",
+                "Alfred K. Mulzet",
+                "Sheri J. Boyd",
+                "Joyati Debnath",
+                "Michelle Merriweather",
+                "David Smith",
+                "Nicoleta Virginia Bila",
+                "Valeree Falduto",
+                "Kirsten R. Messer",
+                "William Radulovich",
+                "Erica M. Rutter",
+                "David Torain",
+                "Catherine Abbott",
+                "Julie Levandosky",
+                "David McCune"
+              ],
               "language": "English"
+            },
+            {
+              "title": "Calculus Volume 2",
+              "url": "https://openstax.org/details/books/calculus-volume-2",
+              "resource_type": "PDF",
+              "authors": [
+                "William Radulovich",
+                "Erica M. Rutter",
+                "David Smith",
+                "Kirsten R. Messer",
+                "Alfred K. Mulzet",
+                "Nicoleta Virginia Bila",
+                "Sheri J. Boyd",
+                "Joyati Debnath",
+                "Valeree Falduto",
+                "Elaine A. Terry",
+                "David Torain",
+                "Michelle Merriweather",
+                "Catherine Abbott",
+                "Joseph Lakey",
+                "Julie Levandosky",
+                "David McCune"
+              ],
+              "language": "English"
+            },
+            {
+              "title": "Understanding Basic Calculus",
+              "url": "https://www.math.nagoya-u.ac.jp/~richard/teaching/f2015/BasicCalculus.pdf",
+              "resource_type": "PDF",
+              "authors": ["S.K. Chung"],
+              "language": "English"
+            },
+            {
+              "title": "Calculus Online Textbook",
+              "url": "https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/resources/mitres_18_001_f17_full_book_pdf/",
+              "resource_type": "PDF",
+              "authors": ["Gilbert Strang"],
+              "language": "English"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Calculus 1 - Full College Course",
+              "url": "https://www.youtube.com/watch?v=HfACrKJ_Y2w",
+              "platform": "YouTube",
+              "channel": "freeCodeCamp.org",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Calculus 2 - Full College Course",
+              "url": "https://www.youtube.com/watch?v=7gigNsz4Oe8",
+              "platform": "YouTube",
+              "channel": "freeCodeCamp.org",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Calculus I (Limits, Derivative, Integrals) **Full Course**",
+              "url": "https://www.youtube.com/watch?v=0S01H4S8djs&list=PLHXZ9OQGMqxfT9RMcReZ4WcoVILP4k6-m",
+              "platform": "YouTube",
+              "channel": "Dr. Trefor Bazett",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Essence of Calculus",
+              "url": "https://www.youtube.com/watch?v=3d6DsjIBzJ4&list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+              "platform": "YouTube",
+              "channel": "3Blue1Brown",
+              "language": "English",
+              "resource_type": "Video"
             }
           ]
         }
