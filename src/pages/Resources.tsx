@@ -33,15 +33,15 @@ export default function Resources() {
   if (!data) return <div className="text-white p-4">Loading...</div>;
 
   return (
-    <div className="text-white p-6 max-w-6xl mx-auto border-x px-10 border-white/10 min-h-screen">
-      <header className="flex items-center justify-between mb-10">
+    <div className="text-white max-w-6xl mx-auto border-x border-white/10 min-h-screen px-4 sm:px-10 py-4 sm:py-6 min-h-screen min-w-screen">
+      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-10">
         <Link
           to="/"
           className="text-lg font-bold tracking-tight hover:scale-105 transition-all"
         >
           Optima
         </Link>
-        <nav className="flex items-center gap-4 text-sm">
+        <nav className="flex items-center gap-3 text-sm overflow-x-auto whitespace-nowrap">
           <Link
             className="text-white/80 hover:text-white hover:scale-105 transition-all"
             to="/"
@@ -62,8 +62,8 @@ export default function Resources() {
           </Link>
         </nav>
       </header>
-      <h1 className="text-3xl font-bold mb-4">{data.name}</h1>
-      <div className="rounded-lg bg-white/5 border border-white/10 p-3 ">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4">{data.name}</h1>
+      <div className="rounded-lg bg-white/5 border border-white/10 p-3 sm:p-4">
         <TreeNode node={data} linkClassName="text-purple-300 hover:underline" />
       </div>
     </div>

@@ -28,26 +28,26 @@ export default function TreeNode({ node, linkClassName = "text-blue-300 hover:un
   const hasChildren = (node.children && node.children.length > 0) || (node.resources && node.resources.length > 0);
 
   return (
-    <div className="ml-4">
+    <div className="ml-2 sm:ml-4">
       <button
-        className="flex items-center gap-2 py-1 px-2 rounded hover:bg-white/5 text-left"
+        className="flex items-center gap-2 py-1 px-2 sm:px-3 rounded hover:bg-white/5 text-left"
         onClick={() => setOpen((v) => !v)}
       >
         <span className="w-5 text-xs opacity-70">{hasChildren ? (open ? "▾" : "▸") : "•"}</span>
-        <span className="font-medium text-white">{node.name}</span>
+        <span className="font-medium text-white break-words">{node.name}</span>
       </button>
       <div
         className={
-          "ml-6 border-l border-white/10 pl-3 space-y-1 transition-all duration-300 " +
+          "ml-3 sm:ml-6 border-l border-white/10 pl-3 space-y-1 transition-all duration-300 " +
           (open ? "opacity-100 max-h-[2000px] translate-y-0" : "opacity-0 max-h-0 -translate-y-1 overflow-hidden")
         }
       >
         {node.resources && node.resources.length > 0 && (
-          <ol className="list-decimal pl-5 space-y-1">
+          <ol className="list-decimal pl-4 sm:pl-5 space-y-1">
             {node.resources.map((r) => (
-              <li key={r.title} className="text-sm">
+              <li key={r.title} className="text-[13px] sm:text-sm">
                 <a
-                  className={linkClassName}
+                  className={`${linkClassName} break-words`}
                   href={r.url}
                   target="_blank"
                   rel="noreferrer"
