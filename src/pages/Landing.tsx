@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
+import Header from "../components/Header";
 
 type Node = {
   name: string;
@@ -23,35 +24,8 @@ export default function Landing() {
   const topCategories = root?.children?.slice(0, 6) ?? [];
 
   return (
-    <div className="text-white p-6 max-w-6xl mx-auto border-x px-10 border-white/10">
-      <header className="flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-lg font-bold tracking-tight hover:scale-105 transition-all"
-        >
-          Optima
-        </Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/resources"
-          >
-            Resources
-          </Link>
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/graph"
-          >
-            Graph
-          </Link>
-        </nav>
-      </header>
+    <div className="text-white max-w-6xl mx-auto border-x border-white/10 px-4 sm:px-10 py-4 sm:py-6 min-h-screen">
+      <Header />
       <section className="py-20 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight">Optima</h1>
         <p className="mt-4 text-white/70 max-w-2xl mx-auto">
@@ -92,7 +66,8 @@ export default function Landing() {
           <div className="rounded-lg border border-white/10 bg-white/5 p-4 hover:scale-105 transition-all">
             <div className="text-lg font-semibold">Graph Visualization</div>
             <div className="mt-1 text-white/70 text-sm">
-              Explore resources as an interactive graph with pan, zoom, and drag.
+              Explore resources as an interactive graph with pan, zoom, and
+              drag.
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+ 
+import Header from "../components/Header";
 
 type Resource = { title: string; url: string };
 
@@ -422,13 +423,14 @@ export default function Graph() {
     document.addEventListener("visibilitychange", onVisibility);
 
     let isPanning = false;
+    let panCandidate = false;
     let lastMx = 0;
     let lastMy = 0;
     let dragging: { node: GraphNode; dx: number; dy: number } | null = null;
     let dragCandidate: { node: GraphNode; dx: number; dy: number } | null =
       null;
-    let mouseDownHit = null;
-    let mouseDownAt = null;
+    let mouseDownHit: GraphNode | null = null;
+    let mouseDownAt: number | null = null;
     let mouseDownPos = { x: 0, y: 0 };
 
     void mouseDownHit;
@@ -453,14 +455,23 @@ export default function Graph() {
 
       if (dragCandidate) {
         const moved = Math.hypot(mx - mouseDownPos.x, my - mouseDownPos.y);
-        if (moved > 4) {
+        if (moved > 6) {
           dragging = dragCandidate;
           dragCandidate = null;
 
-          alpha = 0.2;
+          alpha = 0.1;
           running = true;
           animationId = requestAnimationFrame(step);
           return;
+        }
+      }
+
+      if (!isPanning && panCandidate) {
+        const moved = Math.hypot(mx - mouseDownPos.x, my - mouseDownPos.y);
+        if (moved > 6) {
+          isPanning = true;
+          panCandidate = false;
+          canvas.style.cursor = "grabbing";
         }
       }
 
@@ -503,18 +514,28 @@ export default function Graph() {
         mouseDownAt = performance.now();
         mouseDownPos = { x: mx, y: my };
       } else {
-        isPanning = true;
-        canvas.style.cursor = "grabbing";
+        panCandidate = true;
         mouseDownHit = null;
         mouseDownAt = performance.now();
         mouseDownPos = { x: mx, y: my };
       }
     }
 
-    function handleMouseUp(_: MouseEvent) {
+    function handleMouseUp(e: MouseEvent) {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+      const moved = Math.hypot(mx - mouseDownPos.x, my - mouseDownPos.y);
+      const elapsed = mouseDownAt ? performance.now() - mouseDownAt : Infinity;
+      if (mouseDownHit && moved < 4 && elapsed < 300) {
+        if (mouseDownHit.href) {
+          window.open(mouseDownHit.href, "_blank", "noopener,noreferrer");
+        }
+      }
       dragging = null;
       dragCandidate = null;
       isPanning = false;
+      panCandidate = false;
     }
 
     function handleMouseLeave() {
@@ -525,6 +546,7 @@ export default function Graph() {
       dragCandidate = null;
       isPanning = false;
       canvas.style.cursor = "default";
+      panCandidate = false;
     }
 
     function handleWheel(e: WheelEvent) {
@@ -551,6 +573,118 @@ export default function Graph() {
       { passive: false } as any
     );
 
+    // Touch support: pan, drag node, pinch-zoom
+    let pinchStartDist = 0;
+    let pinchStartScale = 1;
+    let pinchCenter = { x: 0, y: 0 };
+
+    function getTouchPos(t: Touch) {
+      const rect = canvas.getBoundingClientRect();
+      return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+    }
+
+    function handleTouchStart(e: TouchEvent) {
+      if (e.touches.length === 1) {
+        const p = getTouchPos(e.touches[0]);
+        lastMx = p.x;
+        lastMy = p.y;
+        const hit = getHoverNode(p.x, p.y);
+        if (hit) {
+          const wp = screenToWorld(p.x, p.y);
+          dragCandidate = { node: hit, dx: hit.x - wp.x, dy: hit.y - wp.y };
+          mouseDownHit = hit;
+        } else {
+          panCandidate = true;
+          mouseDownHit = null;
+        }
+        mouseDownAt = performance.now();
+        mouseDownPos = { x: p.x, y: p.y };
+      } else if (e.touches.length === 2) {
+        const p1 = getTouchPos(e.touches[0]);
+        const p2 = getTouchPos(e.touches[1]);
+        pinchStartDist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+        pinchStartScale = scale;
+        pinchCenter = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+        dragCandidate = null;
+        dragging = null;
+        isPanning = false;
+        panCandidate = false;
+      }
+      e.preventDefault();
+    }
+
+    function handleTouchMove(e: TouchEvent) {
+      if (e.touches.length === 1) {
+        const p = getTouchPos(e.touches[0]);
+        if (dragging) {
+          const wp = screenToWorld(p.x, p.y);
+          dragging.node.x = wp.x + dragging.dx;
+          dragging.node.y = wp.y + dragging.dy;
+          dragging.node.vx = 0;
+          dragging.node.vy = 0;
+          if (!running) drawScene();
+          lastMx = p.x;
+          lastMy = p.y;
+        } else if (dragCandidate) {
+          const moved = Math.hypot(p.x - mouseDownPos.x, p.y - mouseDownPos.y);
+          if (moved > 6) {
+            dragging = dragCandidate;
+            dragCandidate = null;
+            alpha = 0.2;
+            running = true;
+            animationId = requestAnimationFrame(step);
+          }
+        } else if (!isPanning && panCandidate) {
+          const moved = Math.hypot(p.x - mouseDownPos.x, p.y - mouseDownPos.y);
+          if (moved > 8) {
+            isPanning = true;
+            panCandidate = false;
+            canvas.style.cursor = "grabbing";
+          }
+        } else if (isPanning) {
+          translateX += p.x - lastMx;
+          translateY += p.y - lastMy;
+          lastMx = p.x;
+          lastMy = p.y;
+          if (!running) drawScene();
+        }
+      } else if (e.touches.length === 2) {
+        const p1 = getTouchPos(e.touches[0]);
+        const p2 = getTouchPos(e.touches[1]);
+        const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+        const factor = dist / Math.max(1, pinchStartDist);
+        const newScale = clamp(pinchStartScale * factor, 0.5, 3);
+        const world = screenToWorld(pinchCenter.x, pinchCenter.y);
+        scale = newScale;
+        translateX = pinchCenter.x - world.x * scale;
+        translateY = pinchCenter.y - world.y * scale;
+        if (!running) drawScene();
+      }
+      e.preventDefault();
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+      if (e.touches.length === 0) {
+        const elapsed = mouseDownAt ? performance.now() - mouseDownAt : Infinity;
+        const moved = Math.hypot(lastMx - mouseDownPos.x, lastMy - mouseDownPos.y);
+        if (mouseDownHit && moved < 6 && elapsed < 300) {
+          if (mouseDownHit.href) {
+            window.open(mouseDownHit.href, "_blank", "noopener,noreferrer");
+          }
+        }
+        dragging = null;
+        dragCandidate = null;
+        isPanning = false;
+        panCandidate = false;
+        canvas.style.cursor = "default";
+      }
+      e.preventDefault();
+    }
+
+    canvas.addEventListener("touchstart", handleTouchStart as EventListener, { passive: false } as any);
+    canvas.addEventListener("touchmove", handleTouchMove as EventListener, { passive: false } as any);
+    canvas.addEventListener("touchend", handleTouchEnd as EventListener, { passive: false } as any);
+
     return () => {
       window.removeEventListener("resize", onResize);
       document.removeEventListener("visibilitychange", onVisibility);
@@ -559,51 +693,26 @@ export default function Graph() {
       window.removeEventListener("mouseup", handleMouseUp);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
       canvas.removeEventListener("wheel", handleWheel as EventListener);
+      canvas.removeEventListener("touchstart", handleTouchStart as EventListener);
+      canvas.removeEventListener("touchmove", handleTouchMove as EventListener);
+      canvas.removeEventListener("touchend", handleTouchEnd as EventListener);
       cancelAnimationFrame(animationId);
       controlsRef.current = null;
     };
   }, [data]);
 
   return (
-    <div className="text-white p-6 max-w-6xl mx-auto border-x px-10 border-white/10 min-h-screen">
-      <header className="flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-lg font-bold tracking-tight hover:scale-105 transition-all"
-        >
-          Optima
-        </Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/resources"
-          >
-            Resources
-          </Link>
-          <Link
-            className="text-white/80 hover:text-white hover:scale-105 transition-all"
-            to="/graph"
-          >
-            Graph
-          </Link>
-        </nav>
-      </header>
+    <div className="text-white max-w-6xl mx-auto border-x border-white/10 min-h-screen px-4 sm:px-10 py-4 sm:py-6">
+      <Header />
 
-      <h1 className="text-3xl font-bold mt-10 mb-4">Resources Graph</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mt-6 sm:mt-10 mb-4">Resources Graph</h1>
       {error && <div className="text-red-300 text-sm mb-2">{error}</div>}
       {!data && !error && (
         <div className="text-white/70 text-sm">Loading...</div>
       )}
       <div
         ref={wrapperRef}
-        className="relative rounded-lg bg-white/5 border border-white/10"
-        style={{ height: 520 }}
+        className="relative rounded-lg bg-white/5 border border-white/10 h-[60vh] sm:h-[520px]"
       >
         <div className="absolute top-2 right-2 z-10 flex flex-col gap-2">
           <button
@@ -625,14 +734,14 @@ export default function Graph() {
             −
           </button>
         </div>
-        <canvas ref={canvasRef} />
+        <canvas ref={canvasRef} className="block w-full h-full touch-none" />
       </div>
       <ul className="text-white/60 text-xs mt-3 list-disc pl-5 space-y-1">
         <li>Drag nodes to reposition.</li>
         <li>Drag background to pan.</li>
-        <li>Scroll to zoom or use the + / − controls.</li>
+        <li>Scroll or pinch to zoom. You can also use the + / − controls.</li>
         <li>Hover for full labels and link host.</li>
-        <li>Click resource nodes to open in a new tab.</li>
+        <li>Tap or click resource nodes to open in a new tab.</li>
         <li>Smart label truncation and collision spacing.</li>
         <li>High-DPI canvas rendering.</li>
         <li>Auto-layout force simulation with damping.</li>
