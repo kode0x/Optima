@@ -313,6 +313,65 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Econometrics",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "Basic Econometrics",
+              "url": "https://www.cbpbu.ac.in/userfiles/file/2020/STUDY_MAT/ECO/1.pdf",
+              "resource_type": "PDF",
+              "authors": ["Damodar N. Gujarati"],
+              "language": "Dawn C. Porter"
+            },
+            {
+              "title": "Econometrics",
+              "url": "https://perhuaman.wordpress.com/wp-content/uploads/2014/06/econometrics-bruce-hansen-2014.pdf",
+              "resource_type": "PDF",
+              "authors": ["Bruce E. Hansen"],
+              "language": "English"
+            },
+            {
+              "title": "Econometrics Online Lecture Notes",
+              "url": "https://doonuniversity.ac.in/admin/assets/uploads/docs/econometrics%20513.pdf",
+              "resource_type": "PDF",
+              "authors": ["Dr. Manoj Bhatt"],
+              "language": "English"
+            },
+            {
+              "title": "Introduction To Econometrics",
+              "url": "https://users.ssc.wisc.edu/~mchinn/stock-watson-econometrics-3e-lowres.pdf",
+              "resource_type": "PDF",
+              "authors": ["James H. Stock", "Mark W. Watson"],
+              "language": "English"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Introduction To Econometrics | IIT Madras",
+              "url": "https://www.youtube.com/watch?v=VgwYmSuI5pM&list=PLyqSpQzTE6M-YZKVfuVSYqZnMfyDNLtkw",
+              "platform": "YouTube",
+              "channel": "NPTEL-NOC IITM",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Applied Econometrics",
+              "url": "https://www.youtube.com/watch?v=BlCDUGmbnMs&list=PLyqSpQzTE6M-_17_rQS9WcLZFeYRe0alq",
+              "platform": "YouTube",
+              "channel": "NPTEL-NOC IITM",
+              "language": "English",
+              "resource_type": "Video"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
