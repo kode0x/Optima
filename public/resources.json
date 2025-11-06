@@ -124,6 +124,59 @@
       ]
     },
     {
+      "name": "Probability",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "A First Course in Probability",
+              "url": "https://www.vfu.bg/en/e-Learning/Math--Bertsekas_Tsitsiklis_Introduction_to_probability.pdf",
+              "resource_type": "PDF",
+              "authors": ["Dimitri P. Bertsekas", "John N. Tsitsiklis"],
+              "language": "English"
+            },
+            {
+              "title": "Probability and Statistics: The Science of Uncertainty",
+              "url": "https://utstat.utoronto.ca/mikevans/jeffrosenthal/book.pdf",
+              "resource_type": "PDF",
+              "authors": ["Michael J. Evans", "Jeffrey S. Rosenthal"],
+              "language": "English"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Probability Bootcamp",
+              "url": "https://www.youtube.com/watch?v=-7QG2itL1u4&list=PLMrJAkhIeNNR3sNYvfgiKgcStwuPSts9V",
+              "platform": "YouTube",
+              "channel": "Steve Brunton",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Statistics 110: Probability",
+              "url": "https://www.youtube.com/watch?v=2LR5JYbhyjg&list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo",
+              "platform": "YouTube",
+              "channel": "Harvard University",
+              "language": "English",
+              "resource_type": "Video"
+            },
+            {
+              "title": "Probability",
+              "url": "https://www.youtube.com/watch?v=2XToWi9j0Tk&list=PLC58778F28211FA19",
+              "platform": "YouTube",
+              "channel": "Khan Academy",
+              "language": "English",
+              "resource_type": "Video"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Linear Algebra",
       "children": [
         {
