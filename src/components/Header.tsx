@@ -17,7 +17,7 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="relative overflow-x-hidden overflow-y-hidden">
+    <header className="relative overflow-visible">
       <div className="flex items-center justify-between">
         <Link
           to="/"

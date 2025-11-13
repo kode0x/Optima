@@ -158,17 +158,6 @@ export default function Landing() {
               </a>
             </li>
             <li>
-              Follow me on LinkedIn:{" "}
-              <a
-                className="text-blue-300 hover:underline"
-                href="https://www.linkedin.com/in/jyotiradityaxsingh"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @jyotiradityaxsingh
-              </a>
-            </li>
-            <li>
               Watch or star the project on GitHub:{" "}
               <a
                 className="text-blue-300 hover:underline"
