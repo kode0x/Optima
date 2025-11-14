@@ -425,6 +425,50 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Machine Learning",
+      "children": [
+        {
+          "name": "Books",
+          "resources": [
+            {
+              "title": "Introduction To Machine Learning With Python",
+              "url": "https://www.nrigroupindia.com/e-book/Introduction%20to%20Machine%20Learning%20with%20Python%20(%20PDFDrive.com%20)-min.pdf",
+              "resource_type": "PDF",
+              "authors": ["Andreas C. Müller", "Sarah Guido"],
+              "language": "English"
+            },
+            {
+              "title": "Introduction to Machine Learning",
+              "url": "https://alex.smola.org/drafts/thebook.pdf",
+              "resource_type": "PDF",
+              "authors": ["Alex Smola", "S.V.N. Vishwanathan"],
+              "language": "English"
+            },
+            {
+              "title": "Machine Learning",
+              "url": "https://www.cs.cmu.edu/~tom/files/MachineLearningTomMitchell.pdf",
+              "resource_type": "PDF",
+              "authors": ["Tom M. Mitchell"],
+              "language": "English"
+            }
+          ]
+        },
+        {
+          "name": "Videos",
+          "resources": [
+            {
+              "title": "Machine Learning Specialization By Andrew Ng",
+              "url": "https://www.youtube.com/watch?v=0az8RjxLLPQ&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI",
+              "platform": "YouTube",
+              "channel": "DeepLearningAI",
+              "language": "English",
+              "resource_type": "Video"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

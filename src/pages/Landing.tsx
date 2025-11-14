@@ -21,7 +21,12 @@ export default function Landing() {
       .catch((e) => setError(String(e)));
   }, []);
 
-  const topCategories = root?.children?.slice(0, 6) ?? [];
+  const children = root?.children ?? [];
+  let topCategories = children.slice(0, 6);
+  const ml = children.find((c) => c.name === "Machine Learning");
+  if (ml && !topCategories.some((c) => c.name === ml.name)) {
+    topCategories = [...topCategories.slice(0, 5), ml];
+  }
 
   return (
     <div className="text-white max-w-6xl mx-auto border-x border-white/10 px-4 sm:px-10 py-4 sm:py-6 min-h-screen">
